@@ -2,14 +2,32 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<h1>Profile page of: {{ page_user }}  </h1>
-<form action="." method="POST">
-    {% csrf_token %}
-    {{ profile_form.as_p}}
+<div>
+    <div>
+<img style="height:300px; width: 300px; border-radius: 50%; object-fit: cover; object-position: center;" src="{{member.profile_image.url}}" alt="Profile image">
+    </div>
+</div>
+<h2>Profile page of: {{ user.username }}</h2>
+<small>profile id: {{ user.id }}</small>
+<br>
 
-    <button type="submit">Finnish</button>
-</form>
+<p>Name: {{member.first_name}} {{member.last_name}}</p>
+<p>Email: {{member.email}}</p>
+<p>Description: {{member.description}}</p>
+<button class="btn btn-danger"><a href="{% url 'edit_profile' request.user.id %}">Edit</a></button>
+
+<h3>Posts by {{user.username}}</h3>
+<ul>
+    
+    {% for post in article %}
+ 
+    <li>   
+        <a href="{% url 'article_detail' post.slug %}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
 {% else %}
+
 <p>Please <a href="{% url 'account_login' %}">Login</a> to enter profile information</p>
 <p>Or <a href="{% url 'account_signup' %}">Register</a> if you havent already!</p>
 {% endif %}

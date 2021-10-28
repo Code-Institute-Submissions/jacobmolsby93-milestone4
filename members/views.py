@@ -1,36 +1,40 @@
-from django.views.generic import ListView, DetailView
-from django.views import generic
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib.auth.models import User
 from .models import Member
-from articles.models import Article 
+from articles.models import Article
+from .forms import ProfileForm, EditProfileForm
 
-# Create your views here.
+
+def profile_page_view(request, pk=None):
+    if pk:
+        user = User.objects.get(pk=pk)
+        member = Member.objects.get(pk=pk)
+        article = Article.objects.filter(status=1).order_by('user')
+
+    else:
+        user = request.user
+    context = {
+        'user': user,
+        'member': member,
+        'article': article
+    }
+    return render(request, 'profiles/profile_page.html', context)
 
 
-class ProfilePageView(generic.ListView):
-    """
-    generic class-based view for a list of blogs posted by a user
-    """
-    model = Article
-    paginate_by = 5
-    template_name ='profiles/profile_page.html'
-    
-    def get_queryset(self):
-        """
-        Return list of Blog objects created by BlogAuthor (author id specified in URL)
-        """
-        id = self.kwargs['pk']
-        target_author = get_object_or_404(Member, pk = id)
-        return Member.objects.filter(user=target_author)
-        
-    def get_context_data(self, **kwargs):
-        """
-        Add BlogAuthor to context so they can be displayed in the template
-        """
-        # Call the base implementation first to get a context
-        context = super(ProfilePageView, self).get_context_data(**kwargs)
-        # Get the blogger object from the "pk" URL parameter and add it to the context
-        context['Blogger'] = get_object_or_404(Member, pk = self.kwargs['pk'])
-        return context
-    
+def edit_profile(request, pk=None):
+    if pk:
+        member = Member.objects.get(pk=pk)
+        if request.method == 'POST':
+            form = EditProfileForm(request.POST, instance=request.user)
+
+            if form.is_valid():
+                form.save()
+                return redirect(reverse('members:profile_page_view'))
+        else:
+            form = EditProfileForm(instance=request.user)
+            context = {
+                'form': form,
+                'member': member
+            }
+            return render(request, 'profiles/edit_profile.html', context)

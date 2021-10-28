@@ -10,7 +10,7 @@ class Member(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
-    profile_image = CloudinaryField('profile_image', default='profile_image')
+    profile_image = CloudinaryField('image', default='image')
     description = models.TextField()
 
 
