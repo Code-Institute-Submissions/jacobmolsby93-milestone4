@@ -1,5 +1,4 @@
 from django.db import models
-from members.models import Member
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 # Create your models here.
@@ -7,7 +6,7 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 class Article(models.Model):
-    user = models.ForeignKey(Member, on_delete=models.CASCADE, null=True, related_name='article_post')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='article')
     title = models.CharField(max_length=200)
     slug = models.SlugField(blank=True, null=True)
     content = models.TextField()
@@ -22,10 +21,26 @@ class Article(models.Model):
         ordering = ('-published',)
     
     def __str__(self):
-        return self.title
+        return self.user.username
     
     def number_of_likes(self):
         return self.likes.count()
 
     def get_absolute_urls(self):
         return reverse('home')
+
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="comments")
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
