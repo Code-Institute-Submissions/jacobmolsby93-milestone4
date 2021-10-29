@@ -124,3 +124,18 @@ class ArticleLike(View):
             article.likes.add(request.user)
         
         return HttpResponseRedirect(reverse('article_detail', args=[slug]))
+
+
+def search_view(request):
+    if request.method == "POST":
+        query_name = request.POST.get('title', None)
+        if query_name:
+            results = Article.objects.filter(title__contains=query_name)
+            context = {
+                "results": results
+            }
+            return render(request, 'search_results.html', context=context)
+
+    return render(request, "search_results.html")
+
+        

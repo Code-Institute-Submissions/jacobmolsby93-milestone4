@@ -22,19 +22,15 @@ def profile_page_view(request, pk=None):
     return render(request, 'profiles/profile_page.html', context)
 
 
-def edit_profile(request, pk=None):
-    if pk:
-        member = Member.objects.get(pk=pk)
-        if request.method == 'POST':
-            form = EditProfileForm(request.POST, instance=request.user)
-
-            if form.is_valid():
-                form.save()
-                return redirect(reverse('members:profile_page_view'))
-        else:
-            form = EditProfileForm(instance=request.user)
-            context = {
-                'form': form,
-                'member': member
-            }
-            return render(request, 'profiles/edit_profile.html', context)
+def edit_profile(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('members:profile_page_view'))
+    else:
+        form = EditProfileForm(instance=request.user)
+        context = {
+            'form': form,
+        }
+        return render(request, 'profiles/edit_profile.html', context)

@@ -12,14 +12,15 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ post.user }}</p>
+                                </div>
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top" src="">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ article.featured_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.user }}</p>
-                                </div>
+
                             </div>
                             <a href="{% url 'article_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
@@ -27,7 +28,8 @@
                             </a>
                             <hr />
                             <div>
-                                <p class="card-text text-muted h6 d-inline me-2">{{ post.created_on}} <i class="far fa-heart"></i>
+                                <p class="card-text text-muted h6 d-inline me-2">{{ post.created_on}} <i
+                                        class="far fa-heart"></i>
                                     {{ post.number_of_likes }}</p>
                                 <p class="text-muted d-inline"><i class="far fa-comment-alt"></i>
                                     {{ post.comments.count }}</p>

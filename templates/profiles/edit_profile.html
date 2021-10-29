@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
 
-
-{% block head %}
-<title>Profile</title>
-{% endblock %}
-
-{% block body %}
+{% block content %}
+<h2>Profile</h2>
 <div class="container">
-    <form action="." method="POST">
+    <form action="/profile_page/" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>

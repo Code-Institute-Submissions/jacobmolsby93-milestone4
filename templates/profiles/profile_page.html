@@ -18,9 +18,7 @@
 
 <h3>Posts by {{user.username}}</h3>
 <ul>
-    
     {% for post in article %}
- 
     <li>   
         <a href="{% url 'article_detail' post.slug %}">{{ post.title }}</a>
     </li>
