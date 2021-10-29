@@ -24,8 +24,7 @@ The different areas of the site includes:
 
 - Your Profile page
     - Here as the above, you can see what information you have typed into your own profile page. And edit if you wish to.
- 
-
+ <hr>
 ### Existing Features
 
 - __Navigation Bar__
