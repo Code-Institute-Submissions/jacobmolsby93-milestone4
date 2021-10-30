@@ -5,7 +5,7 @@ The web-application I have created is a reddit style news site, witch lets the u
 Users have the ability to create and update there own profiles through the my-profile tab in the navigation bar. where a short description of each user is displayed under the profile image.
 
 
-![Responsice Mockup](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)##GLÖM EJ
+![Responsice Mockup](https://github.com/jacobmolsby93/milestone4/blob/main/media/images/readme-images/Sk%C3%A4rmbild%20(35).png?raw=true)
 
 ## Features 
 The different areas of the site includes: 
@@ -33,33 +33,29 @@ The different areas of the site includes:
   If you're not a member of the sight or simply just not logged in you have the option to either sign up or to login. 
   - This section of the page is good for the user, becuase you can see if you're logged in or not. As well as to easily navigate through the page with the search bar.
 
-![Nav Bar](https://github.com/lucyrush/readme-template/blob/master/media/love_running_nav.png) ### GLÖM EJ #### 
 
 - __The landing page__
 
   - The landing page on my website, is where you can navigate through the different users posts and to create your own. this is the page where you see a list view of the posts that are created.
   - Grabs you with interesting stories that the other members have created.
 
-![Landing Page](https://github.com/lucyrush/readme-template/blob/master/media/love_running_landing.png) ### GLÖM EJ ####
 
 - __My Profile Section__
 
   - The profile section is for the user to update his personal information, where the posts of the user is vissible in a list, as well as the drafts created and not posted. 
   - The User will gather an overview of their activity on the page.
 
-![Club Ethos](https://github.com/lucyrush/readme-template/blob/master/media/love_running_ethos.png) ### GLÖM EJ ####
+![Profile](https://github.com/jacobmolsby93/milestone4/blob/main/media/images/readme-images/Sk%C3%A4rmbild%20(36).png?raw=true)
 
 - __Article Detail Section__
 
   - Through the home page the user can navigate through the detailed view of the article of their liking, giving them the full story of what that article has to say. And to interact with the other users of the page through the comment section. If the post was interesting enough a like button has been added to give the user a way of expressing how they felt about the article. 
 
-![Meetup Times](https://github.com/lucyrush/readme-template/blob/master/media/love_running_times.png) ### GLÖM EJ ####
 
 - __The Footer__ 
 
   - The footer is added just for a "copyright" purpose and to signal that the user has come to the end of the page.
 
-![Footer](https://github.com/lucyrush/readme-template/blob/master/media/love_running_footer.png) ### GLÖM EJ ####
 <hr>
 ### Features Left to Implement
 - On the home page i want to implement a way so that you can see the top trending posts aswell as the top trending authors.
@@ -76,7 +72,7 @@ Again on this project ive had my brother as an outsider come and look at the app
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
+  - Errors return only for django input [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
 
