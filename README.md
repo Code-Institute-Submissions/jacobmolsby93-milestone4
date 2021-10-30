@@ -5,7 +5,7 @@ The web-application I have created is a reddit style news site, witch lets the u
 Users have the ability to create and update there own profiles through the my-profile tab in the navigation bar. where a short description of each user is displayed under the profile image.
 
 
-![Responsice Mockup](https://github.com/jacobmolsby93/milestone4/blob/main/media/images/readme-images/Sk%C3%A4rmbild%20(35).png?raw=true)
+![Landing Page](https://github.com/jacobmolsby93/milestone4/blob/main/media/images/readme-images/Sk%C3%A4rmbild%20(35).png?raw=true)
 
 ## Features 
 The different areas of the site includes: 
@@ -72,19 +72,17 @@ Again on this project ive had my brother as an outsider come and look at the app
 ### Validator Testing 
 
 - HTML
-  - Errors return only for django input [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
+  - Errors return only for django input [W3C validator](https://github.com/jacobmolsby93/milestone4/blob/main/media/images/readme-images/Sk%C3%A4rmbild%20(42).png?raw=true)
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
+  - No errors were found when passing through the official [(Jigsaw) validator](https://github.com/jacobmolsby93/milestone4/blob/main/media/images/readme-images/css-validator.png?raw=true)
 
 ### Unfixed Bugs
 There will be a few unfixed bugs, becase I couldnt complete the project in time for the deadline. This has been really hard to grasp and to understand fully. Im not expecting a pass on this subject and would happyily redo it as soon as possible.
 Nevertheless I'l list all the bugs here.
-- Edit profile at this moment in time does not work. Cant post it or make the information stick to the database.
+
 - Profile page is not complete. i could not get the posts from the user and showed on a list view. under the bio description.
-- There are issues with the login function which i couldnt solve. Allauth seems more suitable for social authentication.
 - The website is not made to a responsive design to this point. I was focusing on getting the django logic to work.
 
-I know this will result in a fail. im aware of that.
 
 ## Deployment
 The web application is deployed using heroku.
@@ -114,21 +112,5 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 
 - The image on the homepage is taken from [https://unsplash.com/photos/k_Am9hKISLM]
 
-Congratulations on completing your Readme, you have made another big stride in the direction of being a developer! 
 
-## Other General Project Advice
 
-Below you will find a couple of extra tips that may be helpful when completing your project. Remember that each of these projects will become part of your final portfolio so it’s important to allow enough time to showcase your best work! 
-
-- One of the most basic elements of keeping a healthy commit history is with the commit message. When getting started with your project, read through [this article](https://chris.beams.io/posts/git-commit/) by Chris Beams on How to Write  a Git Commit Message 
-  - Make sure to keep the messages in the imperative mood 
-
-- When naming the files in your project directory, make sure to consider meaningful naming of files, point to specific names and sections of content.
-  - For example, instead of naming an image used ‘image1.png’ consider naming it ‘landing_page_img.png’. This will ensure that there are clear file paths kept. 
-
-- Do some extra research on good and bad coding practices, there are a handful of useful articles to read, consider reviewing the following list when getting started:
-  - [Writing Your Best Code](https://learn.shayhowe.com/html-css/writing-your-best-code/)
-  - [HTML & CSS Coding Best Practices](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
-  - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html#General)
-
-Getting started with your Portfolio Projects can be daunting, planning your project can make it a lot easier to tackle, take small steps to reach the final outcome and enjoy the process! 
