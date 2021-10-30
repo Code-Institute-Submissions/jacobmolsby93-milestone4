@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<style>
+  .errorlist{
+    color:red;
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 mb-3 offset-md-2">
+      <div class="card">
+
+        <div class="card col-md-8 mt-3 offset-md-2 mb-3">
+          <div class="card-body mt-3 text-center">
+            <h1>{% trans "Sign Up" %}</h1>
+
+            <p>{% trans "Already have an account? Then please" %} <a href="{% url 'members:LoginView' %}"> {% trans "sign in" %}</a>.</p>
+
+          </div>
+        </div>
+        <div class="col-md-8 offset-md-2 mb-3">
+            <form class="login" method="POST" action="." enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ user_form.as_p }}
+                {{ member_form.as_p }}
+                <button class="btn btn-danger mb-3" type="submit">{% trans "Sign Up" %}</button>
+            </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,36 @@
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+
+#sticky-footer {
+  position: sticky;
+}
+
+.post-link {
+  text-decoration: None;
+  color: black;
+}
+
+.edit-button {
+  text-decoration: none;
+  color: white; 
+}
+
+.edit-button:hover {
+  color: black;
+}
+
+.detail-image {
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  height: 33vh;
+  width: 100%;
+}

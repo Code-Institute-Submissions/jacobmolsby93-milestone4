@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    "allauth.socialaccount.providers.google",
+    # add providers here
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -57,8 +59,25 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT = '/'
-LOGOUT_REDIRECT = '/'
+
+SOCIALACCOUNT_PROVIDERS = {
+    # add providers credentials here
+    'google': {
+        'APP': {
+            'client_id': '135274100752-p229nvlfi57k6lu58k822trkij342kjr.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        }
+    },
+    # 'provider': {
+    #     'APP': {
+    #         'client_id': '123',
+    #         'secret': '456',
+    #         'key': ''
+    #     }
+    # }
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -95,7 +114,11 @@ WSGI_APPLICATION = 'newsblog.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    # 'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) # turn it on in production
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -147,3 +170,9 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# LOGIN_REDIRECT = '/'
+# LOGOUT_REDIRECT = '/'
+LOGIN_URL = '/members/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

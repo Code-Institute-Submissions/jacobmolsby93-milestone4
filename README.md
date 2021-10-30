@@ -29,59 +29,44 @@ The different areas of the site includes:
 
 - __Navigation Bar__
 
-  - Featured on all three pages, the full responsive navigation bar includes links to the Logo, Home page, Gallery and Sign Up page and is identical in each page to allow for easy navigation.
-  - This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
+  - The Navigation bar is placed in the base.html which is extended through all of the other html pages on the website. When you are logged in the website, you have the options to add a post, view your profile or log out. As well as a standard home button. 
+  If you're not a member of the sight or simply just not logged in you have the option to either sign up or to login. 
+  - This section of the page is good for the user, becuase you can see if you're logged in or not. As well as to easily navigate through the page with the search bar.
 
-![Nav Bar](https://github.com/lucyrush/readme-template/blob/master/media/love_running_nav.png)
+![Nav Bar](https://github.com/lucyrush/readme-template/blob/master/media/love_running_nav.png) ### GLÖM EJ #### 
 
-- __The landing page image__
+- __The landing page__
 
-  - The landing includes a photograph with text overlay to allow the user to see exactly which location this site would be applicable to. 
-  - This section introduces the user to Love Running with an eye catching animation to grab their attention
+  - The landing page on my website, is where you can navigate through the different users posts and to create your own. this is the page where you see a list view of the posts that are created.
+  - Grabs you with interesting stories that the other members have created.
 
-![Landing Page](https://github.com/lucyrush/readme-template/blob/master/media/love_running_landing.png)
+![Landing Page](https://github.com/lucyrush/readme-template/blob/master/media/love_running_landing.png) ### GLÖM EJ ####
 
-- __Club Ethos Section__
+- __My Profile Section__
 
-  - The club ethos section will allow the user to see the benefits of joining the Love Running meetups, as well as the benefits of running overall. 
-  - This user will see the value of signing up for the Love Running meetups. This should encourage the user to consider running as their form of exercise. 
+  - The profile section is for the user to update his personal information, where the posts of the user is vissible in a list, as well as the drafts created and not posted. 
+  - The User will gather an overview of their activity on the page.
 
-![Club Ethos](https://github.com/lucyrush/readme-template/blob/master/media/love_running_ethos.png)
+![Club Ethos](https://github.com/lucyrush/readme-template/blob/master/media/love_running_ethos.png) ### GLÖM EJ ####
 
-- __Meetup Times section__
+- __Article Detail Section__
 
-  - This section will allow the user to see exactly when the meetups will happen, where they will be located and how long the run will be in kilometers. 
-  - This section will be updated as these times change to keep the user up to date. 
+  - Through the home page the user can navigate through the detailed view of the article of their liking, giving them the full story of what that article has to say. And to interact with the other users of the page through the comment section. If the post was interesting enough a like button has been added to give the user a way of expressing how they felt about the article. 
 
-![Meetup Times](https://github.com/lucyrush/readme-template/blob/master/media/love_running_times.png)
+![Meetup Times](https://github.com/lucyrush/readme-template/blob/master/media/love_running_times.png) ### GLÖM EJ ####
 
 - __The Footer__ 
 
-  - The footer section includes links to the relevant social media sites for Love Running. The links will open to a new tab to allow easy navigation for the user. 
-  - The footer is valuable to the user as it encourages them to keep connected via social media
+  - The footer is added just for a "copyright" purpose and to signal that the user has come to the end of the page.
 
-![Footer](https://github.com/lucyrush/readme-template/blob/master/media/love_running_footer.png)
-
-- __Gallery__
-
-  - The gallery will provide the user with supporting images to see what the meet ups look like. 
-  - This section is valuable to the user as they will be able to easily identify the types of events the organisation puts together. 
-
-![Gallery](https://github.com/lucyrush/readme-template/blob/master/media/love_running_gallery.png)
-
-- __The Sign Up Page__
-
-  - This page will allow the user to get signed up to Love Running to start their running journey with the community. The user will be able specify if they would like to take part in road, trail or both types of running. The user will be asked to submit their full name and email address. 
-
-![Sign Up](https://github.com/lucyrush/readme-template/blob/master/media/love_running_signup.png)
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+![Footer](https://github.com/lucyrush/readme-template/blob/master/media/love_running_footer.png) ### GLÖM EJ ####
 
 ### Features Left to Implement
+- On the home page i want to implement a way so that you can see the top trending posts aswell as the top trending authors.
 
-- Another feature idea
+- I also want to implement a better search system so you can search for everything not just titles.
+
+- more ? 
 
 ## Testing 
 
@@ -102,12 +87,17 @@ If this section grows too long, you may want to split it off into a separate fil
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
 
 ### Unfixed Bugs
+There will be a few unfixed bugs, becase I couldnt complete the project in time for the deadline. This has been really hard to grasp and to understand fully. Im not expecting a pass on this subject and would happyily redo it as soon as possible.
+Nevertheless I'l list all the bugs here.
+- Edit profile at this moment in time does not work. Cant post it or make the information stick to the database.
+- Profile page is not complete. i could not get the posts from the user and showed on a list view. under the bio description.
+- There are issues with the login function which i couldnt solve. Allauth seems more suitable for social authentication.
+- The website is not made to a responsive design to this point. I was focusing on getting the django logic to work.
 
-You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
+I know this will result in a fail. im aware of that.
 
 ## Deployment
-
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub) 
+The web application is deployed using heroku.
 
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
   - In the GitHub repository, navigate to the Settings tab 
@@ -118,22 +108,21 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 
 
 ## Credits 
-
-In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-
-You can break the credits section up into Content and Media, depending on what you have included in your project. 
+- Code institute for the list view and detail view. And parts of the model in Articles.
+- Aneeq on fiverr for beeing an instructor for me for a few hours.
+- Markus winker Photo from unsplash.com
+- used stackflow for the slugify instance
 
 ### Content 
-
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- Instructions for getting the slugify_instance_title was taken from [https://www.codingforentrepreneurs.com/blog/a-unique-slug-generator-for-django/]
+- The image on the homepage is taken from [https://unsplash.com/photos/k_Am9hKISLM]
+- The post_detail view, comment and like function was taken from [https://learn.codeinstitute.net/]
+- Instructor for django who helped me solve some problems with Member model and User model auth [https://github.com/aneeqakbar]
+- Bootstrap was used for layout of the pages.
 
 ### Media
 
-- The photos used on the home and sign up page are from This Open Source site
-- The images used for the gallery page were taken from this other open source site
-
+- The image on the homepage is taken from [https://unsplash.com/photos/k_Am9hKISLM]
 
 Congratulations on completing your Readme, you have made another big stride in the direction of being a developer! 
 

@@ -1,6 +1,7 @@
 {% extends "openid/base.html" %}
 
 {% load i18n %}
+{% load socialaccount %}
 
 {% block head_title %}OpenID Sign In{% endblock %}
 
@@ -12,6 +13,7 @@
 <form id="openid_login_form" class="openid_login" method="post" action="{% url 'openid_login' %}">
 {% csrf_token %}
 {{form.as_p}}
+<a class="social-login-link btn btn-icon-only btn-facebook" href="{% provider_login_url 'google' %}"><span class="btn-inner--icon mr-1"><i class="fab fa-google"></i></span></a>
 <button type="submit">Sign In</button>
 </form>
 

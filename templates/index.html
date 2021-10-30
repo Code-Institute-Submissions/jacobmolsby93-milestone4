@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <div class="container-fluid">
@@ -16,16 +17,15 @@
                                     <p class="author">Author: {{ post.user }}</p>
                                 </div>
                                 {% if "placeholder" in post.featured_image.url %}
+                                
                                 <img class="card-img-top" src="">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ article.featured_image.url }}">
+                                <a href="{% url 'articles:article_detail' post.slug%}"><img class="card-img-top" src=" {{ post.featured_image.url }}"></a>
                                 {% endif %}
-
                             </div>
-                            <a href="{% url 'article_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-
-                            </a>
+                            <hr>
+                             <a href="{% url 'articles:article_detail' post.slug %}" class="post-link">
+                                 <h2 class="card-title">{{ post.title }}</h2></a>
                             <hr />
                             <div>
                                 <p class="card-text text-muted h6 d-inline me-2">{{ post.created_on}} <i

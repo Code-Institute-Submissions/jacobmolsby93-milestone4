@@ -1,11 +1,17 @@
 {% extends 'base.html'%}
+{% load static %}
 
 {% block content %}
 <h3>Search Results:</h3>
     {% for result in results %}
+    {% if result %}
     <li>
-        <a href="{% url 'article_detail' result.slug %}">{{ result.title }}</a> - <small>Author: {{result.user}}</small>
+        <a href="{% url 'articles:article_detail' result.slug %}">{{ result.title }}</a> - <small>Author: {{result.user}}</small>
     </li>
 </ul>
+{% else %}
+
+<h3>Nothing matched {{ result }}</h3>
+{% endif %}
 {% endfor %}
 {% endblock %}

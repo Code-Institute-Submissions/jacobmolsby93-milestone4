@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<h2>Profile</h2>
 <div class="container">
-    <form action="/profile_page/" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-    <br>
-
+   
+    <div class="row">
+        <div class="col-md-8 mt-3 mb-3 offset-md-2">
+            <div class="card">
+                <div class="card-body">
+                     <h2>Edit Profile</h2>
+                    <form action="." method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <p>{{ form.as_p }}</p>
+                        <button class="btn btn-success post-link" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 
 {% endblock %}

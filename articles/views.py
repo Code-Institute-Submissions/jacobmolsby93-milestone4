@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Article, Comment
+from members.models import Member
 from .forms import CommentForm, ArticleForm
 
 
@@ -12,17 +13,10 @@ class ArticleCreate(View):
     template_name = 'create.html'
 
     def get(self, request, *args, **kwargs):
-        article_form = ArticleForm(request.GET or None)
+        article_form = ArticleForm()
         context = {
             "article_form": article_form,
         }
-
-        if article_form.is_valid():
-            article_form = article_form.save(commit=False)
-            article_form.user = request.user
-            article_form.save()
-        else:
-            article_form = ArticleForm()
 
         return render(
             request,
@@ -39,7 +33,7 @@ class ArticleCreate(View):
             article_form = article_form.save(commit=False)
             article_form.user = request.user
             article_form.save()
-            return redirect('home')
+            return redirect('articles:home')
         else:
             article_form = ArticleForm()
 
@@ -123,7 +117,7 @@ class ArticleLike(View):
         else:
             article.likes.add(request.user)
         
-        return HttpResponseRedirect(reverse('article_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('articles:article_detail', args=[slug]))
 
 
 def search_view(request):

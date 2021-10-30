@@ -5,4 +5,4 @@ from .models import Member
 
 @admin.register(Member)
 class MemberAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'profile_image', 'description')
+    list_display = ('__str__', 'first_name', 'last_name', 'email', 'profile_image', 'description')

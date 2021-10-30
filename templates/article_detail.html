@@ -1,19 +1,19 @@
 {% extends 'base.html' %} {% block content %}
-
+{% load static %}
 {% load crispy_forms_tags %}
 
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div class="col-md-6 masthead-text mb-3">
                 <h1 class="post-title">{{ article.title }}</h1>
                 <p class="post-subtitle"> {{ article.user }} | {{ article.published }} </p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
+            <div class="d-none d-md-block col-md-12 detail-image">
                 {% if "placeholder" in article.featured_image.url %}
-                <img src="" width="100%">
+                <br>
                 {% else %}
-                <img src="{{ media }}" width="100%">
+                <img src="{{ article.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
@@ -21,7 +21,7 @@
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-3">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <p class="card-text ">
@@ -32,7 +32,7 @@
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'article_like' article.slug %}" method="POST">
+                            <form class="d-inline" action="{% url 'articles:article_like' article.slug %}" method="POST">
                                 {% csrf_token %}
 
                                 {% if liked %}

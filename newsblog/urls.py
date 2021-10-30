@@ -18,8 +18,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('articles.urls'), name='articles-urls'),
-    path('profile/', include('members.urls'), name='members'),
-    path('accounts/', include('allauth.urls')),
+    path('', include('articles.urls'), name='articles-urls'), # u dont have to give paths with include() any name.
+    path('accounts/', include('allauth.urls'), name='accounts'),
+    # path('my-page/<int:pk>', include('members.urls'), name='urls'),
+    path('members/', include('members.urls')), 
     path('summernote/', include('django_summernote.urls')),
 ]
