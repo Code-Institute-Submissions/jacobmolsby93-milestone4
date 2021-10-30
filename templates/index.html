@@ -16,12 +16,7 @@
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.user }}</p>
                                 </div>
-                                {% if "placeholder" in post.featured_image.url %}
-                                
-                                <img class="card-img-top" src="">
-                                {% else %}
-                                <a href="{% url 'articles:article_detail' post.slug%}"><img class="card-img-top" src=" {{ post.featured_image.url }}"></a>
-                                {% endif %}
+                                <a href="{% url 'articles:article_detail' post.slug%}"><img class="card-img-top" src="{{ post.featured_image.url }}"></a>
                             </div>
                             <hr>
                              <a href="{% url 'articles:article_detail' post.slug %}" class="post-link">

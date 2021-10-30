@@ -15,7 +15,7 @@ class Article(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(blank=True, null=True)
     content = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField('article_image', default='placeholder')
     published = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)

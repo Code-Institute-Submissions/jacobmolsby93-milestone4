@@ -60,24 +60,18 @@ The different areas of the site includes:
   - The footer is added just for a "copyright" purpose and to signal that the user has come to the end of the page.
 
 ![Footer](https://github.com/lucyrush/readme-template/blob/master/media/love_running_footer.png) ### GLÖM EJ ####
-
+<hr>
 ### Features Left to Implement
 - On the home page i want to implement a way so that you can see the top trending posts aswell as the top trending authors.
 
 - I also want to implement a better search system so you can search for everything not just titles.
 
-- more ? 
-
+-  
+<hr>
 ## Testing 
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
+Testing has been done by me, althou most of the developing of this project has been to trying to figure out how django works. I had created multiple users to check that they all connect to the database and that the right information is shown on the right places. The urls has been tested back and fort to ensure that everything works, the good thing about django is that when something is really wrong it lets you know that it is. 
+Again on this project ive had my brother as an outsider come and look at the application and tell me whwat he thinks, about the parts that work. the parts that dont work is something i will have study more. 
 
 ### Validator Testing 
 

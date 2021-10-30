@@ -20,11 +20,7 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECRET KEY
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -46,7 +42,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     "allauth.socialaccount.providers.google",
-    # add providers here
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -58,25 +53,6 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-
-
-SOCIALACCOUNT_PROVIDERS = {
-    # add providers credentials here
-    'google': {
-        'APP': {
-            'client_id': '135274100752-p229nvlfi57k6lu58k822trkij342kjr.apps.googleusercontent.com',
-            'secret': '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',
-            'key': ''
-        }
-    },
-    # 'provider': {
-    #     'APP': {
-    #         'client_id': '123',
-    #         'secret': '456',
-    #         'key': ''
-    #     }
-    # }
-}
 
 
 MIDDLEWARE = [
@@ -111,14 +87,9 @@ WSGI_APPLICATION = 'newsblog.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) # turn it on in production
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
@@ -166,13 +137,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# LOGIN_REDIRECT = '/'
-# LOGOUT_REDIRECT = '/'
+
 LOGIN_URL = '/members/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
