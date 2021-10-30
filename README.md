@@ -92,8 +92,7 @@ The web application is deployed using heroku.
   - From the source section drop-down menu, select the Master Branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found here - https://code-institute-org.github.io/love-running-2.0/index.html 
-
+The live link can be found here - https://milestone-news-4.herokuapp.com/
 
 ## Credits 
 - Code institute for the list view and detail view. And parts of the model in Articles.
@@ -106,6 +105,7 @@ The live link can be found here - https://code-institute-org.github.io/love-runn
 - The image on the homepage is taken from [https://unsplash.com/photos/k_Am9hKISLM]
 - The post_detail view, comment and like function was taken from [https://learn.codeinstitute.net/]
 - Instructor for django who helped me solve some problems with Member model and User model auth [https://github.com/aneeqakbar]
+  - Aswell as the LoginView and SignupView, which he guided me through to help me understand what i was doing.
 - Bootstrap was used for layout of the pages.
 
 ### Media
